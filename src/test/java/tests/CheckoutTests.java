@@ -35,13 +35,6 @@ public class CheckoutTests {
                 { "Jane", "Smith", "54321" }
         };
     }
-    @DataProvider(name = "loginUserData")
-    public Object[][] loginUserData() {
-        return new Object[][] {
-                { "John", "Doe", "12345" },
-                { "Jane", "Smith", "54321" }
-        };
-    }
 
     @Test(dataProvider = "checkoutData")
     public void testCheckoutProcess(String firstName, String lastName, String zipCode) {
@@ -107,7 +100,7 @@ public class CheckoutTests {
         if (ITestResult.FAILURE == result.getStatus()) {
             try {
                 File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-                FileUtils.copyFile(screenshot, new File("C:\\Users\\birsa\\Desktop\\ABCD\\screenshot_" + result.getName() + ".png"));
+                FileUtils.copyFile(screenshot, new File("C://Users//Yash//Downloads//SS//screenshot_" + result.getName() + ".png"));
                 System.out.println("Screenshot taken for failed test: " + result.getName());
             } catch (IOException e) {
                 System.out.println("Exception while taking screenshot: " + e.getMessage());
